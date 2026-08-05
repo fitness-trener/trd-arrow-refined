@@ -1,0 +1,12 @@
+=== running orig at n=9
+=== running stream at n=9
+
+correctness: totals and no-isolated counts identical for n=1..9
+  n=9   all=90325655
+
+               wall (s)  peak RSS (MB)
+orig              603.1          275.0
+stream            533.3           27.4
+
+speed  : 1.13x   (>1 means streaming is faster)
+memory : 10.02x   (>1 means streaming uses less)

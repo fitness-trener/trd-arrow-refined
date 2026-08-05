@@ -1,0 +1,25 @@
+probe P — poset catalogue vs per-poset work, to m = 9
+python 3.11.15 on 8 cores
+
+  gen m=1   posets 1              0.00s  level +    0.0 MB  total     0.0 MB     114.0 us/poset
+  gen m=2   posets 2              0.00s  level +    0.0 MB  total     0.0 MB     189.6 us/poset
+  gen m=3   posets 5              0.00s  level +    0.0 MB  total     0.0 MB     114.0 us/poset
+  gen m=4   posets 16             0.00s  level +    0.1 MB  total     0.1 MB     118.0 us/poset
+  gen m=5   posets 63             0.02s  level +    0.1 MB  total     0.2 MB     320.3 us/poset
+  gen m=6   posets 318            0.16s  level +    0.4 MB  total     0.6 MB     491.1 us/poset
+  gen m=7   posets 2045           1.60s  level +    2.4 MB  total     3.0 MB     781.3 us/poset
+  gen m=8   posets 16999         18.51s  level +   19.2 MB  total    22.2 MB    1088.8 us/poset
+  gen m=9   posets 183231       150.18s  level +  214.1 MB  total   236.4 MB     819.6 us/poset
+
+contribute phase — cost of the weighted Burnside per poset
+  n=8   over 19449      posets     24.33s    1250.9 us/poset
+  n=9   over 202680     posets    591.99s    2920.8 us/poset
+
+extrapolation to the next level
+  posets on 10 points: 2567284  (14.0x more than m=9)
+  per-poset gen cost grew 0.75x from m=8 to m=9
+  projected gen time  m=10:     1584 s  =   0.44 h  =  0.02 core-days
+  projected peak RSS  m=10:      3.5 GB   (holding the level in memory)
+  projected contribute m=10:     6090 s  =   1.69 h  =  0.07 core-days
+
+  WALL = per-poset weighted Burnside

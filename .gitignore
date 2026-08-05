@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+trd-table-n*.csv
+trd-stream-n*.csv
+!data/trd-table-n10.csv
+2026-*-oeis-triangle-*.txt

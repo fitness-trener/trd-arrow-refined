@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+title: >-
+  Arrow-type semigroupoids / transitive relation digraphs
+  refined by arrow count, complete to 10 objects
+message: If you use this software or data, please cite it.
+type: software
+authors:
+  # VERIFY BEFORE PUBLISHING: name order taken from the author's own correspondence
+  # ("Sultanbek Alikhan", signing as "Alikhan"). Correct if this is the wrong way round.
+  - family-names: Sultanbek
+    given-names: Alikhan
+    # orcid: https://orcid.org/0000-0000-0000-0000   # add if one exists
+keywords:
+  - transitive relations
+  - semigroupoids
+  - enumeration
+  - posets
+  - Burnside lemma
+  - canonical augmentation
+  - OEIS
+license: MIT
+repository-code: https://github.com/USERNAME/trd-arrow-refined   # set before publishing
+abstract: >-
+  Complete enumeration of arrow-type semigroupoids by objects and arrows for 1 to 10
+  objects, equivalently transitive relation digraphs on n unlabelled points with no
+  isolated point counted by number of related pairs. Computed via the Brinkmann-McKay
+  structure theorem as a weighted Burnside count over unlabelled posets, rather than by
+  searching semigroupoids. Extends Table 1 of arXiv:2509.00837, which is complete to 7
+  objects and partial at 8. Includes two independent implementations, one of which
+  streams posets by canonical augmentation and collapses automorphism groups to cycle
+  partitions, and the OEIS b-file for the resulting triangle.
+references:
+  - type: article
+    title: Computational Exploration of Finite Semigroupoids
+    authors:
+      - family-names: Egri-Nagy
+        given-names: Attila
+      - family-names: Nehaniv
+        given-names: Chrystopher L.
+    year: 2025
+    url: https://arxiv.org/abs/2509.00837
+    notes: Source of the arrow refinement and the motivation for this computation.
+  - type: article
+    title: Counting unlabelled topologies and transitive relations
+    authors:
+      - family-names: Brinkmann
+        given-names: Gunnar
+      - family-names: McKay
+        given-names: Brendan D.
+    journal: Journal of Integer Sequences
+    volume: 8
+    year: 2005
+    notes: Article 05.2.1. Source of the structure theorem and of A091073 to 15 points.
