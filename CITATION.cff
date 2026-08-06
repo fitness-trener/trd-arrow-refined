@@ -19,9 +19,9 @@ keywords:
 license: MIT
 version: 1.0.0
 date-released: 2026-08-06
-# repository-code: set this once a code host is reachable; GitHub is currently blocked
-# from the author's network, so Zenodo is the primary archive and its DOI is the citation.
-# doi: 10.5281/zenodo.XXXXXXX   # fill in after the Zenodo deposit is published
+doi: 10.5281/zenodo.21823493
+# repository-code: not set — GitHub is unreachable from the author's network, so Zenodo
+# is the archive of record and the DOI above is the citation.
 abstract: >-
   Complete enumeration of arrow-type semigroupoids by objects and arrows for 1 to 10
   objects, equivalently transitive relation digraphs on n unlabelled points with no
