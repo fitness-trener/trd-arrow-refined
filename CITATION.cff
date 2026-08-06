@@ -5,8 +5,6 @@ title: >-
 message: If you use this software or data, please cite it.
 type: software
 authors:
-  # VERIFY BEFORE PUBLISHING: name order taken from the author's own correspondence
-  # ("Sultanbek Alikhan", signing as "Alikhan"). Correct if this is the wrong way round.
   - family-names: Sultanbek
     given-names: Alikhan
     # orcid: https://orcid.org/0000-0000-0000-0000   # add if one exists
