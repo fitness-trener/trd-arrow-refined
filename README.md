@@ -198,4 +198,7 @@ facts, and they should be reusable without conditions.
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff). Once archived on Zenodo, cite the DOI.
+See [`CITATION.cff`](CITATION.cff).
+
+- **Archived:** [`10.5281/zenodo.21823493`](https://doi.org/10.5281/zenodo.21823493) — cite this.
+- **Source:** <https://github.com/fitness-trener/trd-arrow-refined>
