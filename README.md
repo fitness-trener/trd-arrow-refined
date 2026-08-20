@@ -45,8 +45,12 @@ Nothing here is worth reading if this section fails. It does not.
 | no-isolated totals vs Egri-Nagy & Nehaniv column sums, `n ≤ 7` | 1, 6, 31, 203, 1653, 17156, 227844 — all match |
 | their individual Table 1 cells | every legibly rendered cell reproduces |
 | **two independent implementations** | all 185 bivariate cells at `n = 8` identical |
+| **54 cells against the labeled literature** (v1.1.0) | every cell inside `c/m! <= T <= c`; support starts agree at all 8 arrow counts |
 
 Run logs are in [`results/`](results/).
+
+The last row is an *outside* check: it uses published closed forms and no code from this repository's
+generators. See [Cross-check against the labeled family](#cross-check-against-the-labeled-family).
 
 ## Identification
 
@@ -56,6 +60,31 @@ the correspondence independently to `n = 4`.
 
 The offset against A091073 is the isolated-point convention: arrow-types that *occur* leave nothing
 isolated, which is why the published column sums do not appear in an OEIS search directly.
+
+### Cross-check against the labeled family
+
+OEIS also carries this family in its **labeled** form, one sequence per exact number of ordered
+pairs, each with a closed form `a(n) = sum_m c(k,m) * C(n,m)`:
+
+| pairs `k` | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|
+| | [A349919](https://oeis.org/A349919) | [A349927](https://oeis.org/A349927) | [A349849](https://oeis.org/A349849) | [A348634](https://oeis.org/A348634) | [A393216](https://oeis.org/A393216) | [A392460](https://oeis.org/A392460) | [A393925](https://oeis.org/A393925) | [A393974](https://oeis.org/A393974) |
+
+The `C(n,m)` factor chooses which `m` of the `n` points are active, so **`c(k,m)` is the labeled
+count of exactly the structures in this table's cell `T(m,k)`** — same family, same slicing, same
+no-isolated-point convention. One is counted up to isomorphism, the other is not. Two consequences
+are machine-checked by `src/verify_against_labeled.py`:
+
+- **Bracket.** `c(k,m) = sum over isomorphism classes of m!/|Aut|`, so `c/m! <= T <= c`. This
+  validates cells with no enumeration at all. **54 cells pass.**
+- **Support.** A `k`-arc structure with no isolated object spans at most `2k` objects, so column `k`
+  of the closed form must end at `m = 2k`. It does, at every `k` from 2 to 9, and the support
+  *starts* match this table's object range exactly.
+
+Two further uses, not implemented here. The support bound is a **stopping rule**: arrow-count `k`
+needs no objects past `2k`, so a row-oriented enumeration knows when it is finished. And with
+automorphism orders — which a canonical-form enumerator computes anyway — `sum m!/|Aut| = c(k,m)`
+**determines** a cell rather than bracketing it.
 
 ## Method
 
@@ -118,6 +147,7 @@ src/
   probe_p_poset_ceiling.py  phase-by-phase cost measurement
   identify_arrowtype.py     independent brute-force check of the identification
   make_oeis_submission.py   generates the OEIS b-file and data line
+  verify_against_labeled.py outside check against the labeled OEIS closed forms
 data/
   trd-table-n10.csv         the full table, all cells
   oeis-b-file.txt           385 terms, linear index over rows
@@ -135,6 +165,10 @@ python src/trd_bivariate.py 9     # ~10 min, writes trd-table-n9.csv
 python src/trd_stream.py 9        # ~9 min, same output, ~10x less memory
 python src/bench_trd.py both 9    # both, sequentially, with a correctness gate
 python src/trd_bivariate.py 10    # ~4.4 h, ~3.3 GB
+```
+
+```bash
+python src/verify_against_labeled.py   # instant, no enumeration
 ```
 
 Every script asserts its published check values before reporting anything. A mismatch aborts.

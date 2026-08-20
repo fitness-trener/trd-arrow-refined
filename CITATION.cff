@@ -14,11 +14,12 @@ keywords:
   - enumeration
   - posets
   - Burnside lemma
+  - orbit counting
   - canonical augmentation
   - OEIS
 license: MIT
-version: 1.0.0
-date-released: 2026-08-06
+version: 1.1.0
+date-released: 2026-08-20
 doi: 10.5281/zenodo.21823493
 # repository-code: not set — GitHub is unreachable from the author's network, so Zenodo
 # is the archive of record and the DOI above is the citation.
