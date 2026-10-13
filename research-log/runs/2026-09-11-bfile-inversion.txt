@@ -1,0 +1,26 @@
+inverted 296 nonzero D(e,v) with v <= 10, 2437185421 connected classes in total
+P2 band v <= e+1: PASS
+P1 against brute force, e <= 6: PASS (293 classes agree)
+
+C_d, d = 0..8 : 1, 3, 5, 11, 22, 54, 126, 317, 812
+D_N, N = 0..8 : 1, 3, 11, 36, 115, 357, 1099, 3335, 10084
+
+P3 overlap with the recorded run:
+  C_0..C_5 PASS
+  D_0..D_5 PASS
+
+P4 top two coefficients of E_N (Theorems 4.6, 4.7):
+  N=1  deg=2  lead=2   (N+1=2 )  next=1   (4N-3=1 )  OK
+  N=2  deg=4  lead=3   (N+1=3 )  next=5   (4N-3=5 )  OK
+  N=3  deg=6  lead=4   (N+1=4 )  next=9   (4N-3=9 )  OK
+  N=4  deg=8  lead=5   (N+1=5 )  next=13  (4N-3=13)  OK
+  N=5  deg=10 lead=6   (N+1=6 )  next=17  (4N-3=17)  OK
+  N=6  deg=12 lead=7   (N+1=7 )  next=21  (4N-3=21)  OK
+  N=7  deg=14 lead=8   (N+1=8 )  next=25  (4N-3=25)  OK
+  N=8  deg=16 lead=9   (N+1=9 )  next=29  (4N-3=29)  OK
+P4: PASS
+
+E_N(x) for the new terms:
+  E_6 = 1 x^4 + 33 x^5 + 177 x^6 + 325 x^7 + 301 x^8 + 165 x^9 + 69 x^10 + 21 x^11 + 7 x^12
+  E_7 = 6 x^5 + 126 x^6 + 520 x^7 + 931 x^8 + 870 x^9 + 530 x^10 + 232 x^11 + 87 x^12 + 25 x^13 + 8 x^14
+  E_8 = 42 x^6 + 444 x^7 + 1577 x^8 + 2648 x^9 + 2553 x^10 + 1604 x^11 + 774 x^12 + 299 x^13 + 105 x^14 + 29 x^15 + 9 x^16

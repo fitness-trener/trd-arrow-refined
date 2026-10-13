@@ -1,0 +1,55 @@
+connected classes, e <= 6 (reused from the 2026-08-30 run)
+  [loaded from 2026-09-09-connected-classes.json]
+  0.0s; 20 types, 293 classes
+
+D(e,v) table
+  e=1 v=1 defect=1   D=1
+  e=1 v=2 defect=0   D=1
+  e=2 v=2 defect=2   D=2
+  e=2 v=3 defect=1   D=2
+  e=3 v=2 defect=4   D=1
+  e=3 v=3 defect=3   D=5
+  e=3 v=4 defect=2   D=3
+  e=4 v=2 defect=6   D=1
+  e=4 v=3 defect=5   D=7
+  e=4 v=4 defect=4   D=11
+  e=4 v=5 defect=3   D=6
+  e=5 v=3 defect=7   D=5
+  e=5 v=4 defect=6   D=23
+  e=5 v=5 defect=5   D=25
+  e=5 v=6 defect=4   D=10
+  e=6 v=3 defect=9   D=3
+  e=6 v=4 defect=8   D=33
+  e=6 v=5 defect=7   D=72
+  e=6 v=6 defect=6   D=60
+  e=6 v=7 defect=5   D=22
+
+C_d = # connected classes of defect d
+  C_0   = 1       [d<=0: not a positive defect]
+  C_1   = 3       [complete]
+  C_2   = 5       [complete]
+  C_3   = 11      [complete]
+  C_4   = 22      [complete]
+  C_5   = 54      [complete]
+  C_6   = 84      [INCOMPLETE (needs e=7)]
+  C_7   = 77      [INCOMPLETE (needs e=8)]
+  C_8   = 33      [INCOMPLETE (needs e=9)]
+  C_9   = 3       [INCOMPLETE (needs e=10)]
+
+D_N = # classes of defect N   (trustworthy for N <= 5)
+  D_0 = 1
+  D_1 = 3
+  D_2 = 11
+  D_3 = 36
+  D_4 = 115
+  D_5 = 357
+
+P2 - defect diagonal of the published A399030 b-file must be constant = D_N
+  D_0 = 1      | b-file T(2,1)=1, T(4,2)=1, T(6,3)=1, T(8,4)=1, T(10,5)=1 -> OK
+  D_1 = 3      | b-file T(3,2)=3, T(5,3)=3, T(7,4)=3, T(9,5)=3 -> OK
+  D_2 = 11     | b-file T(6,4)=11, T(8,5)=11, T(10,6)=11 -> OK
+  D_3 = 36     | b-file T(9,6)=36 -> OK
+  D_4 : no published cell with k >= 2N
+  D_5 : no published cell with k >= 2N
+
+P2 verdict: PASS

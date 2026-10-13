@@ -134,8 +134,18 @@ Measured at `n = 9`, both implementations end-to-end:
 | `trd_stream.py` (streaming) | **533.3** | **27.4** |
 
 `n = 10` took 4.4 h and 3.25 GB with the level-storing implementation. `n = 11` is out of reach for
-it (~64 GB) and looks like a few core-days for the streaming one — an estimate from a cost model
-that has already been wrong by a factor of two once, so treat it as indicative.
+it (~64 GB). For the streaming one, a checkpointed run of the unlabelled walk **measured** 235,772
+posets/h at `m = 11` after 4.24 h, which projects to about **198 h (8.3 days)** for that level; the run
+was stopped at 4.9 h and its partial output kept. An earlier version of this README said "a few
+core-days"; that was an estimate from a cost model that was off by a factor of 2.5, and the measurement
+supersedes it. The *labelled* count over the same catalogue needs only `|Aut(P)|`, not its cycles, and
+finished `m = 11` in 22,947.5 s (rows 8-11 of OEIS A399095, in `research-log/`).
+
+## Research log
+
+The dated scripts and recorded outputs behind the connected-component decomposition, the defect
+grading, the inversion of the published b-file, and the labelled rows 8-11 of A399095 are in
+[`research-log/`](research-log/README.md).
 
 ## Layout
 

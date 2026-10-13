@@ -1,0 +1,25 @@
+checks
+  385 entries, row n has n^2 of them                         PASS 
+  all entries non-negative                                   PASS 
+  band: T(n,k) = 0 whenever k < n-1                          PASS 
+  row sums = A296105(n) for 2 <= n <= 10                     PASS (row 1 = 1; A296105(1) = 2 counts the empty relation)
+  k > (n-1)^2+1 forces connected: T(n,k) = A399030(n,k)      PASS 
+  Euler transform of the triangle = A399030, all 385 terms   PASS 
+  brute force rows 1..4, every k, = triangle                 PASS (30 cells)
+  OEIS PROG output = triangle                                PASS 
+
+ALL CHECKS: PASS
+
+DATA (70 terms, 259 chars):
+1, 1, 2, 1, 1, 0, 2, 5, 7, 5, 3, 2, 0, 1, 0, 0, 3, 11, 23, 33, 31, 24, 14, 9, 3, 3, 2, 0, 0, 1, 0, 0, 0, 6, 25, 72, 138, 199, 221, 206, 165, 116, 75, 44, 25, 12, 11, 3, 2, 2, 2, 0, 0, 0, 1, 0, 0, 0, 0, 10, 60, 210, 524, 982, 1473, 1832, 1986, 1885, 1618, 1258
+
+EXAMPLE rows:
+  n=1: 1;
+  n=2: 1, 2, 1, 1;
+  n=3: 0, 2, 5, 7, 5, 3, 2, 0, 1;
+  n=4: 0, 0, 3, 11, 23, 33, 31, 24, 14, 9, 3, 3, 2, 0, 0, 1;
+  n=5: 0, 0, 0, 6, 25, 72, 138, 199, 221, 206, 165, 116, 75, 44, 25, 12, 11, 3, 2, 2, 2, 0, 0, 0, 1;
+
+row sums n=1..10: [1, 5, 25, 157, 1325, 14358, 199763, 3549001, 80673244, 2352747542]
+column k=n-1 (spanning trees, first entries): [1, 2, 3, 6, 10, 22, 42, 94, 203]
+b-file written: 385 lines
